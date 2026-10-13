@@ -187,6 +187,10 @@ public final class PollinationsPlugin extends JavaPlugin {
             return;
         }
 
+        // Read world and entity state here, on the command thread, never in the HTTP callback.
+        Location at = sender instanceof Player player
+                ? player.getLocation()
+                : Bukkit.getWorlds().get(0).getSpawnLocation();
         reply(sender, "Drawing \"" + text + "\". This can take up to a minute.");
         api.image(current.apiKey(), current.imageModel(), text).thenAccept(result -> {
             if (!isEnabled()) {
@@ -196,9 +200,6 @@ public final class PollinationsPlugin extends JavaPlugin {
                 reply(sender, result.error());
                 return;
             }
-            Location at = sender instanceof Player player
-                    ? player.getLocation()
-                    : Bukkit.getWorlds().get(0).getSpawnLocation();
             maps.create(at, result.value(), "Pollinations: " + Text.clean(text, 40), item -> give(sender, at, item));
         });
     }
