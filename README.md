@@ -80,8 +80,8 @@ Prices and availability change, so check the model lists before you rely on thes
 
 - **Build target:** Paper 1.21.11, Java 21. The plugin compiles against the Paper 1.21.11 API.
 - **Unit tested:** chat request and reply handling, the model-list checks, the rate limiter, image conversion to map colours, text cleanup, and error messages.
-- **Live API tested:** chat, the model lists, and image generation, each called against the real `gen.pollinations.ai`. The chat test sent the earlier exchange with the next request, but the model did not recall the first question, so whether an NPC recalls earlier messages is unproven. These checks used the plugin's pure classes and Node requests shaped like the plugin's, not its HTTP client.
-- **Not yet tested:** a running Paper server. Commands, NPC spawning, right-click chat, and maps shown in-game are not verified. Test them on a Paper 1.21.11 server before you rely on the plugin.
+- **Run on a real Paper 1.21.11 server (console only):** the plugin enabled, `/polli npc create` spawned a villager, `/polli npc list` and `/polli say` worked, and the plugin's own HTTP client got status 200 from `gen.pollinations.ai` with `amazon/nova-micro-v1`. An NPC replied in character and recalled "My name is Tom" on the next message; the memory is saved in `plugins/Pollinations/npcs.json`. The chat models, the image route and the model lists were also called live from test scripts.
+- **Not yet tested:** a real Minecraft client. Right-click chat, `/polli image` and maps shown in-game (the image-to-map conversion is unit tested, and the image route was called live, but the map was not rendered on a client), and the per-player permission nodes are not verified. Try them on a Paper 1.21.11 server before you rely on them.
 - **Spigot:** not supported. The plugin uses Paper APIs (`AsyncChatEvent`, the region and entity schedulers).
 - **Folia:** not declared and not tested. Do not run it on Folia.
 
