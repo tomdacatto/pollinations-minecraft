@@ -1,0 +1,23 @@
+# Pollinations plugin configuration. Run /polli reload after editing.
+
+# Your Pollinations API key. Create one at https://enter.pollinations.ai/keys
+# Chat and images are paid for with your Pollen balance. Leave empty to disable AI features.
+api-key: ""
+
+# Text model for NPC chat. Live list: https://gen.pollinations.ai/text/models
+text-model: "amazon/nova-micro-v1"
+
+# Image model for /polli image. Live list: https://gen.pollinations.ai/image/models
+image-model: "black-forest-labs/flux.1-schnell"
+
+# Upper bound on tokens per NPC reply. Lower is cheaper.
+max-tokens: 120
+
+# Minimum seconds between two AI requests from the same player. Console is exempt.
+cooldown-seconds: 5
+
+# Maximum AI requests per player per hour. Chat and images are counted separately.
+max-requests-per-hour: 60
+
+# Recent messages each NPC remembers per player (user and reply both count).
+memory-messages: 12

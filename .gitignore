@@ -1,0 +1,14 @@
+target/
+*.class
+
+# Runtime copies from a server: they hold the API key and player chat, so never commit them.
+plugins/Pollinations/config.yml
+plugins/Pollinations/npcs.json
+plugins/Pollinations/maps/
+
+# Local server folders and IDE files
+run/
+server/
+.idea/
+*.iml
+.vscode/

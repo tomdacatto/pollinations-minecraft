@@ -1,0 +1,23 @@
+name: Pollinations
+version: 1.0.0
+main: ai.pollinations.minecraft.PollinationsPlugin
+api-version: '1.21'
+description: Pollinations AI for your server - chatty NPC villagers and prompt-to-map images, paid with your own Pollen.
+author: Pollinations contributors
+website: https://pollinations.ai
+
+commands:
+  polli:
+    description: Talk to NPCs, draw images on maps, and manage NPCs.
+    usage: /polli <say|image|npc|reload> ...
+
+permissions:
+  pollinations.chat:
+    description: Talk to NPC villagers and list them.
+    default: true
+  pollinations.image:
+    description: Generate an image on an in-game map.
+    default: true
+  pollinations.admin:
+    description: Create and remove NPCs and reload the config.
+    default: op
