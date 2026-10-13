@@ -80,7 +80,7 @@ Prices and availability change, so check the model lists before you rely on thes
 
 - **Build target:** Paper 1.21.11, Java 21. The plugin compiles against the Paper 1.21.11 API.
 - **Unit tested:** chat request and reply handling, the model-list checks, the rate limiter, image conversion to map colours, text cleanup, and error messages.
-- **Live API tested:** chat (including a second turn that carries memory), the model lists, and image generation, each checked against the real `gen.pollinations.ai`. These checks used the plugin's pure classes, not its HTTP client.
+- **Live API tested:** chat, the model lists, and image generation, each called against the real `gen.pollinations.ai`. The chat test sent the earlier exchange with the next request, but the model did not recall the first question, so whether an NPC recalls earlier messages is unproven. These checks used the plugin's pure classes and Node requests shaped like the plugin's, not its HTTP client.
 - **Not yet tested:** a running Paper server. Commands, NPC spawning, right-click chat, and maps shown in-game are not verified. Test them on a Paper 1.21.11 server before you rely on the plugin.
 - **Spigot:** not supported. The plugin uses Paper APIs (`AsyncChatEvent`, the region and entity schedulers).
 - **Folia:** not declared and not tested. Do not run it on Folia.
